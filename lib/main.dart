@@ -7,6 +7,10 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  void ansQues() {
+    print("answer chosen !");
+  }
+
   @override
   Widget build(BuildContext context) {
     var ques = ['what\'s your favorite color', 'what\'s you favorite animal'];
@@ -19,7 +23,7 @@ class MyApp extends StatelessWidget {
         children: [
           Text("The question !"),
           RaisedButton(
-            onPressed: () {},
+            onPressed: ansQues, //passing pointer not function
             child: Text('answer 1'),
           ),
           RaisedButton(
