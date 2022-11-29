@@ -4,24 +4,34 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyAppState();
+  }
+}
 
+class MyAppState extends State<MyApp> {
+  var questionIndex = 0;
   void ansQues() {
-    print("answer chosen !");
+    setState(() {
+      questionIndex++;
+    });
   }
 
+  List<String> question = ["What your fav colo?", "what your fav animal?"];
   @override
   Widget build(BuildContext context) {
     var ques = ['what\'s your favorite color', 'what\'s you favorite animal'];
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: Text('Quiz App'),
+        title: Text("Quiz App"),
       ),
       body: Column(
         children: [
-          Text("The question !"),
+          Text(question[questionIndex]),
           RaisedButton(
             onPressed: ansQues, //passing pointer not function
             child: Text('answer 1'),
