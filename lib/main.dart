@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/result.dart';
 import 'question.dart';
 import 'answer.dart';
 import 'quiz.dart';
+import 'result.dart';
 
 void main() {
   runApp(MyApp());
@@ -57,9 +59,7 @@ class _MyAppState extends State<MyApp> {
                     questionIndex: _questionIndex,
                     questions: _questions,
                   )
-                : Center(
-                    child: Text("No more question!"),
-                  )));
+                : Result()));
   }
 }
 // 
