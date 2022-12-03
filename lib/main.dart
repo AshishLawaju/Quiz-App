@@ -19,7 +19,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
-  void _ansQues() {
+  var _totalScore = 0;
+  _answerQuestion(int score) {
+    _totalScore = _totalScore + score;
+
     // ? can be null aslo
     if (_questionIndex < _questions.length) {
       print("we have more question !");
@@ -70,11 +73,11 @@ class _MyAppState extends State<MyApp> {
             ),
             body: _questionIndex < _questions.length
                 ? Quiz(
-                    answerQuestion: _ansQues,
+                    answerQuestion: _answerQuestion,
                     questionIndex: _questionIndex,
                     questions: _questions,
                   )
-                : Result()));
+                : Result(_totalScore)));
   }
 }
 // 
