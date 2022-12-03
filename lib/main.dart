@@ -32,15 +32,30 @@ class _MyAppState extends State<MyApp> {
   final _questions = const [
     {
       'questionText': 'what\'s your favorite color',
-      'answer': ['Black ', 'Red', 'White', 'green']
+      'answer': [
+        {'text': 'Black ', 'score': '10'},
+        {'text': 'Red', 'score': '5'},
+        {'text': 'White', 'score': '4'},
+        {'text': 'green', 'score': '1'}
+      ]
     },
     {
       'questionText': 'what\'s you favorite animal',
-      'answer': ['rabbit ', 'Snake', 'Lion', 'elp']
+      'answer': [
+        {'text': 'rabbit ', 'score': '2'},
+        {'text': 'Snake', 'score': '6'},
+        {'text': 'Lion', 'score': '10'},
+        {'text': 'elp', 'score': '8'}
+      ]
     },
     {
       'questionText': 'what\'s you favorite instructor',
-      'answer': ['max ', 'max', 'max', 'max']
+      'answer': [
+        {'text': 'max ', 'score': '2'},
+        {'text': 'max', 'score': '2'},
+        {'text': 'max', 'score': '2'},
+        {'text': 'max', 'score': '2'}
+      ]
     },
   ];
 
