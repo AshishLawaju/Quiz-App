@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
   void _ansQues() {
     // ? can be null aslo
-    if (_questionIndex < questions.length) {
+    if (_questionIndex < _questions.length) {
       print("we have more question !");
     }
     setState(() {
@@ -52,7 +52,11 @@ class _MyAppState extends State<MyApp> {
               title: Text("Quiz App"),
             ),
             body: _questionIndex < _questions.length
-                ? Quiz(_answerQuestion, _questions)
+                ? Quiz(
+                    answerQuestion: _ansQues,
+                    questionIndex: _questionIndex,
+                    questions: _questions,
+                  )
                 : Center(
                     child: Text("No more question!"),
                   )));
