@@ -47,19 +47,23 @@ class _MyAppState extends State<MyApp> {
     //questions = []; //deosenot work if const questions
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        title: Text("Quiz App"),
-      ),
-      body: Column(
-        children: [
-          Question(questions[_questionIndex]['questionText'] as String),
-          ...(questions[_questionIndex]['answer'] as List<String>)
-              .map((answer) {
-            return Answer(_ansQues, answer);
-          }).toList()
-        ],
-      ),
-    ));
+            appBar: AppBar(
+              title: Text("Quiz App"),
+            ),
+            body: _questionIndex < questions.length
+                ? Column(
+                    children: [
+                      Question(
+                          questions[_questionIndex]['questionText'] as String),
+                      ...(questions[_questionIndex]['answer'] as List<String>)
+                          .map((answer) {
+                        return Answer(_ansQues, answer);
+                      }).toList()
+                    ],
+                  )
+                : Center(
+                    child: Text("No more question!"),
+                  )));
   }
 }
 // 
