@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  final questions = const [
+  final _questions = const [
     {
       'questionText': 'what\'s your favorite color',
       'answer': ['Black ', 'Red', 'White', 'green']
@@ -51,10 +51,11 @@ class _MyAppState extends State<MyApp> {
             appBar: AppBar(
               title: Text("Quiz App"),
             ),
-            body: _questionIndex < questions.length
-                ? Quiz()
+            body: _questionIndex < _questions.length
+                ? Quiz(_answerQuestion, _questions)
                 : Center(
-                    child: Text("No more question!"),));
+                    child: Text("No more question!"),
+                  )));
   }
 }
 // 
